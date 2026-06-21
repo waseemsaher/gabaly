@@ -53,15 +53,15 @@ export default function Hero() {
 
           {lang === "ar" ? (
             <div className="overflow-hidden mb-3">
-              <h1 className={`font-display text-[clamp(2.5rem,10vw,7rem)] leading-[1.1] tracking-[0.02em] text-[#0A0A0A] transition-all duration-1000 ${loaded ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`} style={{ transitionDelay: "500ms" }}>{SITE_CONFIG.nameAr}</h1>
+              <h1 className={`font-display text-[clamp(2rem,8vw,5.5rem)] leading-[1.1] tracking-[0.02em] text-[#0A0A0A] transition-all duration-1000 ${loaded ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`} style={{ transitionDelay: "500ms" }}>{SITE_CONFIG.nameAr}</h1>
             </div>
           ) : (
             <>
               <div className="overflow-hidden mb-2">
-                <h1 className={`font-display text-[clamp(3rem,12vw,9rem)] leading-[0.85] tracking-[0.02em] text-[#0A0A0A] transition-all duration-1000 ${loaded ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`} style={{ transitionDelay: "500ms" }}>OMAR</h1>
+                <h1 className={`font-display text-[clamp(2.5rem,10vw,7rem)] leading-[0.85] tracking-[0.02em] text-[#0A0A0A] transition-all duration-1000 ${loaded ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`} style={{ transitionDelay: "500ms" }}>OMAR</h1>
               </div>
               <div className="overflow-hidden mb-3">
-                <h1 className={`font-display text-[clamp(3rem,12vw,9rem)] leading-[0.85] tracking-[0.02em] text-[#0A0A0A] transition-all duration-1000 ${loaded ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`} style={{ transitionDelay: "650ms" }}>EL-GABALY</h1>
+                <h1 className={`font-display text-[clamp(2.5rem,10vw,7rem)] leading-[0.85] tracking-[0.02em] text-[#0A0A0A] transition-all duration-1000 ${loaded ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`} style={{ transitionDelay: "650ms" }}>EL-GABALY</h1>
               </div>
               <div className={`mb-6 transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "800ms" }}>
                 <span className="text-[#6B6A65] text-2xl sm:text-3xl md:text-4xl" style={{ fontFamily: "serif" }}>{SITE_CONFIG.nameAr}</span>
