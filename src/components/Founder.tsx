@@ -70,7 +70,7 @@ export default function Founder() {
 
         <div ref={photosRef} className={`mt-20 sm:mt-28 grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-1000 ${photosVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="relative overflow-hidden group aspect-[4/3] hover-lift shadow-md">
-            <img src={getImage("founder-federation.jpg")} alt={t.founder.photoLabels.federation} className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-[1.03]" />
+            <img src={getImage("founder-federation.jpg")} alt={t.founder.photoLabels.federation} loading="lazy" className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/50 via-transparent to-transparent" />
             <div className={`absolute bottom-4 ${isRTL ? 'right-4' : 'left-4'} flex items-center gap-3`}>
               <div className="w-6 h-[1px] bg-[#F5F4F0]/60" />
@@ -78,7 +78,7 @@ export default function Founder() {
             </div>
           </div>
           <div className="relative overflow-hidden group aspect-[4/3] hover-lift shadow-md">
-            <img src={getImage("founder-community.jpg")} alt={t.founder.photoLabels.community} className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-[1.03]" />
+            <img src={getImage("founder-community.jpg")} alt={t.founder.photoLabels.community} loading="lazy" className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/50 via-transparent to-transparent" />
             <div className={`absolute bottom-4 ${isRTL ? 'right-4' : 'left-4'} flex items-center gap-3`}>
               <div className="w-6 h-[1px] bg-[#F5F4F0]/60" />

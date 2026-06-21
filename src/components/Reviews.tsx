@@ -17,7 +17,7 @@ function ReviewCard({ review, index }: { review: (typeof SITE_CONFIG.reviews)[0]
       <div className="flex gap-0.5 mb-5">{Array.from({length:5}).map((_,i)=><Star key={i} size={12} className={i<review.rating?"text-[#0A0A0A] fill-[#0A0A0A]":"text-[#B0AFA9]/30"} />)}</div>
       <p className="text-[#6B6A65] text-sm leading-[1.8] mb-8 font-light italic">"{text}"</p>
       <div className="flex items-center gap-3 border-t border-[#0A0A0A]/8 pt-5">
-        <div className="w-10 h-10 rounded-full overflow-hidden border border-[#0A0A0A]/10 flex-shrink-0 grayscale group-hover:grayscale-0 transition-all duration-500"><img src={getImage(review.avatar)} alt={name} className="w-full h-full object-cover"/></div>
+        <div className="w-10 h-10 rounded-full overflow-hidden border border-[#0A0A0A]/10 flex-shrink-0 grayscale group-hover:grayscale-0 transition-all duration-500"><img src={getImage(review.avatar)} alt={name} loading="lazy" className="w-full h-full object-cover"/></div>
         <div><div className="text-[#0A0A0A] text-sm font-medium tracking-wide">{name}</div><div className="text-[#B0AFA9] text-[10px] tracking-[0.2em] uppercase">{location}</div></div>
       </div>
     </div>

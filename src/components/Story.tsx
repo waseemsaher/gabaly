@@ -33,7 +33,7 @@ function StoryBeat({ beat, index }: { beat: (typeof SITE_CONFIG.storyBeats)[0]; 
           {hasImage && (
             <div className={`mt-8 md:mt-0 ${isEven ? `${isRTL ? 'md:col-start-1 md:row-start-1 md:pr-16' : 'md:col-start-2 md:pl-16'}` : `${isRTL ? 'md:col-start-2 md:pl-16' : 'md:col-start-1 md:row-start-1 md:pr-16'}`}`}>
               <div className="relative overflow-hidden group hover-lift">
-                <img src={getImage(beat.image!)} alt={heading} className="w-full h-64 sm:h-80 object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-[1.03]" />
+                <img src={getImage(beat.image!)} alt={heading} loading="lazy" className="w-full h-64 sm:h-80 object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-[1.03]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#F5F4F0]/30 via-transparent to-transparent" />
                 <div className={`absolute bottom-3 ${isRTL ? 'right-3' : 'left-3'} flex items-center gap-2`}>
                   <div className="w-4 h-[1px] bg-[#F5F4F0]/60" />

@@ -33,7 +33,7 @@ export default function La7Gym() {
             </div>
           </div>
           <div className={`relative overflow-hidden group ${isRTL ? 'lg:order-1' : ''} shadow-lg`}>
-            <img src={getImage("la7gym-action.jpg")} alt="Omar coaching at La7 Gym" className="w-full h-80 sm:h-[28rem] object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-[1.02]" />
+            <img src={getImage("la7gym-action.jpg")} alt="Omar coaching at La7 Gym" loading="lazy" className="w-full h-80 sm:h-[28rem] object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-[1.02]" />
             <div className={`absolute inset-0 bg-gradient-to-${isRTL ? 'r' : 'l'} from-transparent to-[#EEEEE9]/20`} />
             <div className={`absolute bottom-4 ${isRTL ? 'left-4' : 'right-4'} flex items-center gap-2`}>
               <div className="w-6 h-[1px] bg-[#F5F4F0]/60" />

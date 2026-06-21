@@ -20,7 +20,7 @@ function Lightbox({ images, currentIndex, onClose, onPrev, onNext }: { images: t
       <button onClick={isRTL?onNext:onPrev} className={`absolute ${isRTL?'right-4 sm:right-8':'left-4 sm:left-8'} z-20 p-3 text-[#B0AFA9] hover:text-[#F5F4F0] transition-colors`}><ChevronLeft size={24}/></button>
       <button onClick={isRTL?onPrev:onNext} className={`absolute ${isRTL?'left-4 sm:left-8':'right-4 sm:right-8'} z-20 p-3 text-[#B0AFA9] hover:text-[#F5F4F0] transition-colors`}><ChevronRight size={24}/></button>
       <div className="relative z-10 w-full max-w-5xl max-h-[85vh] mx-4 sm:mx-8">
-        <img key={current.src} src={getImage(current.src)} alt={current.alt} className="w-full max-h-[85vh] object-contain animate-scale-in" />
+        <img key={current.src} src={getImage(current.src)} alt={current.alt} loading="lazy" className="w-full max-h-[85vh] object-contain animate-scale-in" />
         <div className="text-center mt-4"><span className="text-[#B0AFA9] text-xs tracking-[0.2em] uppercase">{current.alt}</span><span className="mx-3 text-[#6B6A65]/30">·</span><span className="text-[#6B6A65] text-xs tracking-[0.2em] uppercase">{current.category}</span></div>
       </div>
     </div>
@@ -31,7 +31,7 @@ function GalleryItem({ img, index, onClick }: { img: (typeof SITE_CONFIG.gallery
   const { ref, isInView } = useInView({ threshold: 0.05, rootMargin: "0px" });
   return (
     <div ref={ref} className={`relative overflow-hidden cursor-pointer group transition-all duration-700 shadow-sm hover:shadow-xl ${isInView?"opacity-100 translate-y-0":"opacity-0 translate-y-6"}`} style={{ transitionDelay:`${(index%4)*80}ms` }} onClick={onClick}>
-      <img src={getImage(img.src)} alt={img.alt} className={`w-full ${ASPECT_HEIGHTS[index%ASPECT_HEIGHTS.length]} object-cover group-hover:scale-[1.04] transition-all duration-[800ms]`} />
+      <img src={getImage(img.src)} alt={img.alt} loading="lazy" className={`w-full ${ASPECT_HEIGHTS[index%ASPECT_HEIGHTS.length]} object-cover group-hover:scale-[1.04] transition-all duration-[800ms]`} />
       <div className="absolute inset-0 bg-[#0A0A0A]/0 group-hover:bg-[#0A0A0A]/40 transition-all duration-500 flex items-center justify-center">
         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-3 border border-[#F5F4F0]/50 bg-[#0A0A0A]/20 backdrop-blur-sm"><Maximize2 size={16} className="text-[#F5F4F0]"/></div>
       </div>

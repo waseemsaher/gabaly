@@ -36,7 +36,7 @@ function AchievementCard({ achievement, index }: { achievement: (typeof SITE_CON
     <div ref={ref} className={`group flex-shrink-0 w-[85vw] sm:w-[400px] md:w-auto transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`} style={{ transitionDelay: `${index * 100}ms` }}>
       <div className="relative h-full bg-white border border-[#0A0A0A]/5 hover:border-[#0A0A0A]/15 transition-all duration-700 overflow-hidden hover-lift shadow-sm">
         <div className="relative h-52 sm:h-60 overflow-hidden">
-          <img src={getImage(achievement.image)} alt={title} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-105" style={{ filter: "brightness(0.6)" }} />
+          <img src={getImage(achievement.image)} alt={title} loading="lazy" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-[1200ms] group-hover:scale-105" style={{ filter: "brightness(0.6)" }} />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent" />
           <div className={`absolute top-0 ${isRTL ? 'right-0' : 'left-0'} p-5 flex items-start justify-between w-full`}>
             <span className="font-display text-4xl tracking-wider text-[#F5F4F0]/90 drop-shadow">{achievement.year}</span>

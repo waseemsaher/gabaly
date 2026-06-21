@@ -11,8 +11,18 @@ export default function Hero() {
 
   useEffect(() => { const timer = setTimeout(() => setLoaded(true), 100); return () => clearTimeout(timer); }, []);
   useEffect(() => {
-    const h = (e: MouseEvent) => setMousePos({ x: (e.clientX / window.innerWidth - 0.5) * 20, y: (e.clientY / window.innerHeight - 0.5) * 20 });
-    window.addEventListener("mousemove", h); return () => window.removeEventListener("mousemove", h);
+    let ticking = false;
+    const h = (e: MouseEvent) => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setMousePos({ x: (e.clientX / window.innerWidth - 0.5) * 20, y: (e.clientY / window.innerHeight - 0.5) * 20 });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("mousemove", h); 
+    return () => window.removeEventListener("mousemove", h);
   }, []);
 
   const nicknames = lang === "ar" ? SITE_CONFIG.nicknamesAr : SITE_CONFIG.nicknames;
@@ -22,7 +32,7 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-[-20px] transition-transform duration-[2000ms] ease-out"
         style={{ transform: `translate(${mousePos.x * 0.3}px, ${mousePos.y * 0.3}px) scale(1.05)` }}>
-        <img src={getImage("hero-main.jpg")} alt="Omar El-Gabaly"
+        <img src={getImage("hero-main.jpg")} alt="Omar El-Gabaly" fetchPriority="high"
           className={`w-full h-full object-cover object-center transition-all duration-[3000ms] ${loaded ? "scale-100 opacity-100" : "scale-110 opacity-0"}`}
           style={{ filter: "brightness(0.35) saturate(0.5) contrast(1.1)" }} />
       </div>

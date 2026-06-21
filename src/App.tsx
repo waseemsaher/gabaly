@@ -1,15 +1,18 @@
+import { lazy, Suspense } from "react";
 import { LanguageProvider } from "./LanguageContext";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Story from "./components/Story";
-import Achievements from "./components/Achievements";
-import Founder from "./components/Founder";
-import La7Gym from "./components/La7Gym";
-import Coaching from "./components/Coaching";
-// import Gallery from "./components/Gallery";
-import Reviews from "./components/Reviews";
-import Social from "./components/Social";
-import Footer from "./components/Footer";
+
+// Lazy load below-the-fold components to improve initial load time and reduce bundle size
+const Story = lazy(() => import("./components/Story"));
+const Achievements = lazy(() => import("./components/Achievements"));
+const Founder = lazy(() => import("./components/Founder"));
+const La7Gym = lazy(() => import("./components/La7Gym"));
+const Coaching = lazy(() => import("./components/Coaching"));
+// const Gallery = lazy(() => import("./components/Gallery"));
+const Reviews = lazy(() => import("./components/Reviews"));
+const Social = lazy(() => import("./components/Social"));
+const Footer = lazy(() => import("./components/Footer"));
 
 export default function App() {
   return (
@@ -18,16 +21,20 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
-          <Story />
-          <Achievements />
-          <Founder />
-          <La7Gym />
-          <Coaching />
-          {/* <Gallery /> */}
-          <Reviews />
-          <Social />
+          <Suspense fallback={<div className="min-h-screen bg-[#F5F4F0]" />}>
+            <Story />
+            <Achievements />
+            <Founder />
+            <La7Gym />
+            <Coaching />
+            {/* <Gallery /> */}
+            <Reviews />
+            <Social />
+          </Suspense>
         </main>
-        <Footer />
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
       </div>
     </LanguageProvider>
   );

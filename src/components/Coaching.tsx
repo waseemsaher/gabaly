@@ -13,7 +13,7 @@ export default function Coaching() {
     <section id="coaching" className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
       {/* Dark inversion section — this one stays dark for contrast break */}
       <div className="absolute inset-0">
-        <img src={getImage("hero-main.jpg")} alt="" className="w-full h-full object-cover" style={{ filter: "brightness(0.12) saturate(0.2) contrast(1.1)" }} />
+        <img src={getImage("hero-main.jpg")} alt="" loading="lazy" className="w-full h-full object-cover" style={{ filter: "brightness(0.12) saturate(0.2) contrast(1.1)" }} />
         <div className="absolute inset-0 bg-[#0A0A0A]/70" />
       </div>
       <div className="absolute inset-0 grain-overlay" />
